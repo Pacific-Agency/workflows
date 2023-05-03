@@ -1,0 +1,22 @@
+name: Релиз
+
+on:
+  workflow_call:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Слияние main и release
+        run: |
+          git remote update
+          git checkout --track origin/release
+          git merge origin/main
+
+      - name: Отправка изменений
+        run: |
+          git push origin release
