@@ -1,5 +1,7 @@
 # Workflows
 
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/pacific-agency/workflows?color=%23aac811&label=%D0%A0%D0%B5%D0%BB%D0%B8%D0%B7)
+
 Репозиторий с переиспользуемыми `workflows`.
 
 ## Использование
