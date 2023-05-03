@@ -24,7 +24,7 @@ on:
       - main
 jobs:
   build:
-    uses: Pacific-Agency/workflows/.github/workflows/build.yml@0.1.0
+    uses: Pacific-Agency/workflows/.github/workflows/build.yml@v0.1.0
 
 ```
 
