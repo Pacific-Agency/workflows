@@ -1,1 +1,11 @@
-* @Pacific-Agency/frontend
+# Все файлы репозитория
+* @ExEr7um
+
+# Фронтенд
+frontend-*.yml @Pacific-Agency/frontend
+
+# Бекенд
+backend-*.yml @Pacific-Agency/backend
+
+# Деплой
+deploy-*.yml @Pacific-Agency/backend
