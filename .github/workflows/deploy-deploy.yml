@@ -1,0 +1,32 @@
+name: Деплой
+
+on:
+  workflow_call:
+    inputs:
+      repository:
+        description: "Название репозитория / папки (например `dentistry-deploy`)"
+        required: true
+        type: string
+    secrets:
+      SSH_HOST:
+        description: "Host для SSH"
+        required: true
+      SSH_USERNAME:
+        description: "Username для SSH"
+        required: true
+      SSH_KEY:
+        description: "Ключ SSH"
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Скрипт cicd.sh
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd ${{ inputs.repository }} && ./cicd.sh
