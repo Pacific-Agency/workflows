@@ -1,0 +1,33 @@
+name: Обновление подмодулей
+
+on:
+  workflow_call:
+    secrets:
+      PA_TOKEN:
+        description: "Токен для скачивания подмодулей"
+        required: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          submodules: true
+          token: ${{ secrets.PA_TOKEN }}
+
+      - name: Конфигурация пользователя
+        run: |
+          git config --global user.email "y.cloud@mypacific.ru"
+          git config --global user.name "pacific-bot"
+
+      - name: Обновление подмодулей
+        run: |
+          git pull --recurse-submodules
+          git submodule update --remote --recursive
+
+      - name: Создание коммита
+        run: |
+          git remote update
+          git commit -am "chore: Автоматическое обновление подмодулей" && git push || echo "Обновлений нет"
