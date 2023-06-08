@@ -1,0 +1,47 @@
+name: Список изменений и релиз GitHub
+
+on:
+  workflow_call:
+    inputs:
+      version:
+        description: "Версия для package.json"
+        required: true
+        type: string
+    secrets:
+      GPG_PRIVATE_KEY:
+        required: true
+        description: "Ключ для подписи коммита"
+      BOT_ACCESS_TOKEN:
+        description: "Токен бота для пуша в защищенные ветки"
+
+permissions:
+  contents: write
+
+jobs:
+  changelog-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.BOT_ACCESS_TOKEN || github.token }}
+
+      - name: Настройка NodeJS
+        uses: actions/setup-node@v3
+
+      - name: Конфигурация пользователя
+        run: |
+          git config --global user.email "y.cloud@mypacific.ru"
+          git config --global user.name "pacific-bot"
+
+      - name: Импорт ключа GPG
+        uses: crazy-max/ghaction-import-gpg@v5
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+
+      - name: Создание списка изменений и релиза на GitHub
+        run: |
+          npx changelogen@latest --release --push -r ${{ inputs.version }}
+          npx changelogen@latest gh release --token ${{ github.token }}
