@@ -43,5 +43,6 @@ jobs:
 
       - name: Создание списка изменений и релиза на GitHub
         run: |
+          npm config set sign-git-tag true
           npx changelogen@latest --release --push -r ${{ inputs.version }}
           npx changelogen@latest gh release --token ${{ github.token }}
