@@ -1,4 +1,21 @@
 
+## v0.2.1
+
+[compare changes](https://github.com/Pacific-Agency/workflows/compare/v0.2.0...v0.2.1)
+
+
+### 🚀 Улучшения
+
+  - Переменная для пропуска загрузки `puppeteer` ([#39](https://github.com/Pacific-Agency/workflows/pull/39))
+
+### 🏡 Другие изменения
+
+  - Удаление файла для релизов GitHub ([#36](https://github.com/Pacific-Agency/workflows/pull/36))
+
+### ❤️  Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.2.0
 
 [compare changes](https://github.com/Pacific-Agency/workflows/compare/v0.1.1...v0.2.0)
