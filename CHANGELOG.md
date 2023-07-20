@@ -1,4 +1,26 @@
 
+## v0.3.0
+
+[compare changes](https://github.com/Pacific-Agency/workflows/compare/v0.2.1...v0.3.0)
+
+### 🚀 Улучшения
+
+- Скрипт `Prettier` ([#43](https://github.com/Pacific-Agency/workflows/pull/43))
+- Скрипты `CI` для бекенда ([#42](https://github.com/Pacific-Agency/workflows/pull/42))
+
+### 🐞 Исправления
+
+- Нет лимита времени на тестах ([#44](https://github.com/Pacific-Agency/workflows/pull/44))
+
+### 🏡 Другие изменения
+
+- Удаление `assignees` и `reviewers` в конфигурации Renovate ([#45](https://github.com/Pacific-Agency/workflows/pull/45))
+
+### ❤️  Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+- Mark Likhachev <m4rk.l1kh4ch3v@gmail.com>
+
 ## v0.2.1
 
 [compare changes](https://github.com/Pacific-Agency/workflows/compare/v0.2.0...v0.2.1)
