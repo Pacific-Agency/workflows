@@ -4,7 +4,7 @@ on:
   workflow_call:
 
 jobs:
-  lint:
+  eslint:
     runs-on: ubuntu-latest
     env:
       PUPPETEER_SKIP_DOWNLOAD: true
@@ -28,3 +28,28 @@ jobs:
 
       - name: ESLint
         run: pnpm lint
+
+  prettier:
+    runs-on: ubuntu-latest
+    env:
+      PUPPETEER_SKIP_DOWNLOAD: true
+    steps:
+      - uses: actions/checkout@v3
+      - name: Настройка NodeJS
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 8
+      - uses: actions/setup-node@v3
+        with:
+          cache: "pnpm"
+
+      - name: Авторизация в GitHub Packages
+        run: echo >> .npmrc "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Установка зависимостей
+        run: |
+          pnpm pkg set scripts.prepare="nuxt prepare"
+          pnpm install
+
+      - name: Prettier
+        run: pnpm prettier
