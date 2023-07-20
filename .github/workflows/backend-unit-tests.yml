@@ -1,0 +1,23 @@
+name: Unit-тесты
+
+on:
+  workflow_call:
+
+jobs:
+  black:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Настройка Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10.5
+          architecture: "x64"
+
+      - name: Установка tox
+        run: pip install tox
+
+      - name: Запуск Unit-тестов
+        run: tox -e unit-tests

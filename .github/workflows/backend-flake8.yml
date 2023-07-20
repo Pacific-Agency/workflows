@@ -1,0 +1,23 @@
+name: Flake8
+
+on:
+  workflow_call:
+
+jobs:
+  black:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Настройка Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10.5
+          architecture: "x64"
+
+      - name: Установка tox
+        run: pip install tox
+
+      - name: Запуск Flake8
+        run: tox -e flake8
