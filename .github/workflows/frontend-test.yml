@@ -6,6 +6,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     env:
       PUPPETEER_SKIP_DOWNLOAD: true
     steps:

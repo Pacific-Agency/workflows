@@ -6,6 +6,7 @@ on:
 jobs:
   eslint:
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     env:
       PUPPETEER_SKIP_DOWNLOAD: true
     steps:
@@ -31,6 +32,7 @@ jobs:
 
   prettier:
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     env:
       PUPPETEER_SKIP_DOWNLOAD: true
     steps:
