@@ -27,7 +27,7 @@ jobs:
           token: ${{ secrets.BOT_ACCESS_TOKEN || github.token }}
 
       - name: Настройка NodeJS
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
 
       - name: Конфигурация пользователя
         run: |
