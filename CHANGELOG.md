@@ -1,4 +1,20 @@
 
+## v0.5.0
+
+[compare changes](https://github.com/Pacific-Agency/workflows/compare/v0.4.0...v0.5.0)
+
+### 🚀 Улучшения
+
+- ⚠️  Удаление перезаписывания скрипта `prepare` ([e76d87e](https://github.com/Pacific-Agency/workflows/commit/e76d87e))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Удаление перезаписывания скрипта `prepare` ([e76d87e](https://github.com/Pacific-Agency/workflows/commit/e76d87e))
+
+### ❤️ Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.4.0
 
 [compare changes](https://github.com/Pacific-Agency/workflows/compare/v0.3.0...v0.4.0)
