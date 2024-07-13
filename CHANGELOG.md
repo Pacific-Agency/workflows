@@ -1,4 +1,20 @@
 
+## v0.6.0
+
+[compare changes](https://github.com/Pacific-Agency/workflows/compare/v0.5.0...v0.6.0)
+
+### 🚀 Улучшения
+
+- ⚠️  Удаление версии `pnpm` ([a12dbcb](https://github.com/Pacific-Agency/workflows/commit/a12dbcb))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Удаление версии `pnpm` ([a12dbcb](https://github.com/Pacific-Agency/workflows/commit/a12dbcb))
+
+### ❤️ Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.5.0
 
 [compare changes](https://github.com/Pacific-Agency/workflows/compare/v0.4.0...v0.5.0)
