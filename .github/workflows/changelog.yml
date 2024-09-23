@@ -29,20 +29,17 @@ jobs:
       - name: Настройка NodeJS
         uses: actions/setup-node@v4
 
-      - name: Конфигурация пользователя
-        run: |
-          git config --global user.email "y.cloud@mypacific.ru"
-          git config --global user.name "pacific-bot"
-
       - name: Импорт ключа GPG
         uses: crazy-max/ghaction-import-gpg@v6
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           git_user_signingkey: true
           git_commit_gpgsign: true
+          git_tag_gpgsign: true
+          git_committer_email: y.cloud@mypacific.ru
+          git_committer_name: pacific-bot
 
       - name: Создание списка изменений и релиза на GitHub
         run: |
-          npm config set sign-git-tag true
           npx changelogen@latest --release --push -r ${{ inputs.version }}
           npx changelogen@latest gh release --token ${{ github.token }}
