@@ -1,4 +1,16 @@
 
+## v0.6.1
+
+[compare changes](https://github.com/Pacific-Agency/workflows/compare/v0.6.0...v0.6.1)
+
+### 🐞 Исправления
+
+- Конфигурация пользователя при импорте GPG ([11bbc10](https://github.com/Pacific-Agency/workflows/commit/11bbc10))
+
+### ❤️ Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.6.0
 
 [compare changes](https://github.com/Pacific-Agency/workflows/compare/v0.5.0...v0.6.0)
